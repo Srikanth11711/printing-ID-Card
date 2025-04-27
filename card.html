@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+        .card {
+            height: max-content;
+            width: 600px;
+            border: 2px solid black;
+            background-color: rgba(57, 54, 233, 0.938);
+            color: white;
+            align-items: center;
+            border-radius: 13px;
+            padding: 5px 0;
+            margin-top: 20px;
+        }
+        .cut {
+            width: 100px;
+            height: 5px;
+            background-color: white;
+            border-radius: 25px;
+            align-self: center;
+            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .details {
+            background-color: rgb(245, 245, 245);
+            width: 550px;
+            height: 260px;
+            color: black;
+            margin-left: 23px;
+            margin-top: 17px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .info {
+            text-align: center;
+            padding-top: 5px;
+            padding-right: 0px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        #clgpic {
+            height: 60px;
+            width: 60px;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .text-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 10px;
+        }
+        #clg {
+            padding-top: 10px;
+            font-size: x-large;
+            font-weight: bolder;
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+        #place {
+            padding-left: 45px;
+            font-size: large;
+            font-weight: bold;
+        }
+        #clgdet {
+            padding-left: 55px;
+            font-size: large;
+        }
+        #sri {
+            height: 150px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .student {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .name, .enrollId, .branch, .validate {
+            display: flex;
+        }
+        .name p:first-child,
+        .enrollId p:first-child,
+        .branch p:first-child,
+        .validate p:first-child {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .student > div {
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .student > div p:first-child {
+            width: 120px; 
+            font-weight: bold;
+            margin: 0;
+        }
+        .student > div p:last-child {
+            margin: 0;
+        }
+        .bar {
+            position: relative;
+            bottom: 60px;
+            display: flex;
+        }
+        #bar1 {
+            height: 40px;
+            width: 250px;
+            padding-left: 40px;
+        }
+        #sig {
+            margin-left: 20px;
+            align-self: center;
+            font-size: large;
+            text-align: center;
+            color: black;
+            padding-left: 100px;
+        }
+        /* Login form styles */
+        #loginForm {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 400px;
+        }
+        #loginForm input {
+            width: 90%;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        #loginForm button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Form -->
+<div id="loginForm">
+    <h2>Login Page</h2>
+    <input type="text" id="nameInput" placeholder="Enter Name"><br>
+    <input type="text" id="idInput" placeholder="Enter ID"><br>
+    <input type="text" id="branchInput" placeholder="Enter Branch"><br>
+    <button onclick="fillIdCard()">Submit</button>
+</div>
+
+<!-- ID Card (hidden at start) -->
+<div class="card" id="idCard" style="display: none;">
+    <div class="cut">
+        <div class="sub-cut"></div>
+    </div>
+    <div class="info">
+        <img src="Screenshot from 2025-04-12 16-22-44.png" alt="#" id="clgpic">
+        <div class="text-info">
+            <h1><p id="clg">RAJIV GANDHI UNIVERSITY - BASAR</p></h1> 
+            <p id="place"> Basar Campus ,At- Nizamabad Telangana 501507</p>
+            <p id="clgdet">MO :123456 ,Email : clg@gmail.com</p><br>
+        </div>
+    </div>
+    <div class="details">
+        <img src="WhatsApp Image 2025-03-05 at 3.24.00 PM.jpeg" alt="#" id="sri">
+        <div class="student">
+            <div class="name">
+                <p id="name1">Name</p>
+                <p id="name2">: RAMAVATH SRIKANTH</p>
+            </div>
+            <div class="enrollId">
+                <p id="enroll">Enroll Id</p>
+                <p id="enroll1">: 34567654</p>
+            </div>
+            <div class="branch">
+                <p id="bra">Branch</p>
+                <p id="bra1">: Computer Science and Engineering</p>
+            </div>
+            <div class="validate">
+                <p id="valid">Valid upto</p>
+                <p id="date1">: 30/07/2026</p>
+            </div>
+        </div>
+    </div>
+    <div class="bar">
+        <img src="bar.png" alt="#" id="bar1">
+        <p id="sig">principal</p>
+    </div>
+</div>
+
+<script>
+function fillIdCard() {
+    let name = document.getElementById('nameInput').value;
+    let id = document.getElementById('idInput').value;
+    let branch = document.getElementById('branchInput').value;
+
+    if(name && id && branch) {
+        // Update the ID Card
+        document.getElementById('name2').textContent = ": " + name;
+        document.getElementById('enroll1').textContent = ": " + id;
+        document.getElementById('bra1').textContent = ": " + branch;
+
+        // Hide Login Form and Show ID Card
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('idCard').style.display = 'block';
+    } else {
+        alert("Please fill all fields!");
+    }
+}
+</script>
+
+</body>
+</html>
